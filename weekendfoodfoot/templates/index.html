@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block content %}
+<!-- Section 1 -->
+<div class="section-bg-1 d-flex align-items-center justify-content-center">
+    <div class="container text-center">
+        <img src="{% static 'images/mask-removebg-preview.png' %}" alt="wff" />
+        <p class="text-justify mb-4">Bienvenue chez Weekenf Food Foot, où la passion de la gastronomie rencontre la diversité culinaire. Notre mission est de vous offrir une expérience culinaire inoubliable, pleine de saveurs et de surprises</p>
+        <a class=" btn btn-primary btn-readmore fw-bold" href="{% url 'reserve_table' %}">VOIR LES TABLES</a>
+    </div>
+</div>    
+<!-- Section 2 -->
+<div class="section-bg-2">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <!-- <h2>Une autre section</h2>
+                <p>Du contenu supplémentaire ici...</p> -->
+            </div>
+            <div class="col-md-6 sub-section-2">
+                <div class="col-md-12">
+                    <div class="text-black p-3 d-flex flex-column justify-content-center align-items-start">
+                        <h1 class="text-center mb-4">MENU</h1>
+                        <p class="text-justify mb-4">Découvrez nos menus, conçus pour satisfaire chaque palais. Du traditionnel au contemporain, chaque plat raconte une histoire et transporte vos sens dans un voyage culinaire unique."</p>
+                        <ul class="text-left">
+                            <li>Petit Déjeuner : Description des options de petit déjeuner, en mettant en avant des plats spéciaux ou des options santé.</li>
+                            <li>Déjeuner : Présentation des menus du déjeuner, incluant des options variées pour tous les goûts.</li>
+                            <li>Dîner : Mise en avant des spécialités du soir, des plats signature et des options saisonnières.</li>
+                            <li>Spécialités du Chef : "Laissez-vous tenter par nos spécialités, où chaque ingrédient est choisi pour sa qualité et sa fraîcheur, créant des saveurs authentiques et des présentations artistiques."</li>
+                        </ul>
+                        <a class="nav-link btn btn-primary btn-readmore" href="{% url 'foods' %}">VOIR LE MENU</a>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Section 3 -->
+<div class="section-bg-3">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 sub-section-3">
+                <div class="col-md-12">
+                    <div class="text-black p-3 d-flex flex-column justify-content-center align-items-start">
+                        <h1 class="text-left mb-4">Services</h1>
+                        <p class="text-justify mb-4 fs-5">Nous croyons en la qualité, la fraîcheur et la variété. Chaque plat est préparé avec amour, en utilisant les ingrédients les plus frais pour garantir une expérience gustative exceptionnelle.</p>
+                        <ul class="text-left">    
+                            <li>Réservations : "Planifiez votre prochaine expérience culinaire chez nous. Réservez facilement en ligne ou par téléphone. Nous sommes impatients de vous accueillir."</li>
+                            <li>Événements Privés : "Votre événement mérite un cadre et un menu à la hauteur. Découvrez nos offres personnalisées pour rendre votre événement inoubliable."</li>
+                            <li>Catering : "Apportez la signature de [Nom du Restaurant] à votre prochain événement. Explorez nos options de catering, conçues pour impressionner vos invités."</li>
+                        </ul>
+                    </div>
+                </div>                
+            </div>
+            <div class="col-md-6">
+                <!-- <h2>Une autre section</h2>
+                <p>Du contenu supplémentaire ici...</p> -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Section 4 -->
+<div class="section-bg-4">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <!-- <h2>Une autre section</h2>
+                <p>Du contenu supplémentaire ici...</p> -->
+            </div>
+            <div class="col-md-6 sub-section-2">
+                <div class="col-md-12">
+                    <div class="text-black p-3 d-flex flex-column justify-content-center align-items-start">
+                        <h1 class="text-center mb-4">A PROPOS</h1>
+                        <p class="text-justify mb-4">Découvrez nos menus, conçus pour satisfaire chaque palais. Du traditionnel au contemporain, chaque plat raconte une histoire et transporte vos sens dans un voyage culinaire unique."</p>
+                        <ul class="text-left">
+                            <li>Histoire : "Fondé en 2014, Weekend Food Foot a été créé avec l'ambition de proposer une cuisine innovante et variée.<br /> Notre voyage culinaire est marqué par l'exploration de différentes cultures et saveurs.".</li>
+                            <li>Notre Équipe : "Rencontrez notre équipe de chefs talentueux, dirigée par AK, un passionné de cuisine avec plus de 10 ans d'expérience.<br /> Chacun apporte son unicité et son expertise pour créer des plats mémorables."</li>
+                        </ul>
+                        <a class="nav-link btn btn-primary btn-readmore" href="{% url 'about' %}">VOIR PLUS</a>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Ajoutez plus de sections au besoin -->
+{% endblock %}

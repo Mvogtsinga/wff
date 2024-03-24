@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <h1 class="mb-4">Contactez Nous</h1>
+            {% if messages %}
+                <div class="alert alert-dismissible fade show" role="alert">
+                    {% for message in messages %}
+                        <p>{{ message }}</p>
+                    {% endfor %}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endif %}
+
+            <p>Des questions ou des demandes spéciales ? N'hésitez pas à nous contacter via notre formulaire. <a href="tel:0292515600">02 9251 5600</a> or email us at <a href="mailto:mvogtsinga@gmail.com">mvogtsinga@gmail.com</a></p>
+            <p>Nous vous répondrons dans les plus brefs délais</p>
+
+            <form method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="first-name" class="form-label">Prénom</label>
+                    <input type="text" class="form-control" id="first-name" name="first_name">
+                </div>
+                <div class="mb-3">
+                    <label for="last-name" class="form-label">Nom</label>
+                    <input type="text" class="form-control" id="last-name" name="last_name">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email*</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="contact-number" class="form-label">Numéro de telephone*</label>
+                    <input type="text" class="form-control" id="contact-number" name="contact_number" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message*</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

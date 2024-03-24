@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <h3>Mes réservations</h3>
+    <ul>
+        {% for reservation in reservations %}
+        <li>
+            Table: {{ reservation.table_type.name }} - Date: {{ reservation.date|date:"d M Y" }} ({{ reservation.date|date:"l" }})
+        </li>
+        {% empty %}
+        <li>Aucune réservation effectuée.</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

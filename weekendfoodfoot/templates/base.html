@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mon Site{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Ajout de Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-expand-lg navbar-custom bg-custom fixed-top">
+        <div class="container my-container">
+            <!-- Zone Langues à gauche -->
+            <div class="navbar-nav me-auto">
+                <a class="nav-link nav-link-certificates" href="{% url 'home' %}">Restaurant</a>
+                <a class="nav-link nav-link-certificates" href="{% url 'foods' %}">Menu</a>
+                <a class="nav-link nav-link-certificates" href="{% url 'contact' %}">Contact</a>
+            </div>
+    
+            <!-- Logo au milieu (ajustez la position avec CSS) -->
+            <a class="navbar-brand mx-auto" href="{% url 'home' %}">
+                <img src="{% static 'images/wff-removebg-preview.png' %}" alt="Logo" class="img-fluid">
+            </a>
+    
+            <!-- Liens de navigation à droite -->
+            <div class="navbar-nav ms-auto">
+                {% if user.is_authenticated %}
+                    <a class="nav-link nav-link-certificates" href="{% url 'account' %}">Mes reservations</a>
+                    <a class="nav-link nav-link-certificates" href="{% url 'logout' %}">Déconnexion</a>
+                {% else %}
+                    <a class="nav-link nav-link-certificates" href="{% url 'login' %}">Se connecter</a>
+                    <a class="nav-link nav-link-certificates" href="{% url 'signup' %}">S'inscrire</a>
+                {% endif %}
+                <a class="nav-link btn btn-primary btn-certificates" href="{% url 'reserve_table' %}">Reserver</a>
+            </div>
+        </div>
+    </nav>    
+    <main class="flex-grow-1">
+        {% block content %}
+        {% endblock %}
+    </main>
+ 
+    <footer class="footer-custom">
+        <div class="container">
+            <div class="row flex-footer">
+                <!-- Colonne Sitemap -->
+                <div class="col-12 col-md-3 footer-section">
+                    <h5>SITEMAP</h5>
+                    <ul>
+                        <li><a href="{% url 'about' %}">About</a></li>
+                        <li><a href="{% url 'foods' %}">Menu</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                        <!-- Ajoutez plus de liens ici -->
+                    </ul>
+                </div>
+                
+                <!-- Colonne Location -->
+                <div class="col-12 col-md-3 footer-section">
+                    <h5>LOCATION</h5>
+                    <p>Adresse complète ici</p>
+                </div>
+    
+                <!-- Colonne Reservations -->
+                <div class="col-12 col-md-3 footer-section">
+                    <h5>RESERVATIONS</h5>
+                    <a href="{% url 'reserve_table' %}" class="btn btn-outline-secondary">MAKE A RESERVATION</a>
+                </div>
+    
+                <!-- Colonne Fink -->
+                
+                <div class="col-12 col-md-3 footer-section">
+                    <h5>NETWORK</h5>
+                    <div class="social-media">
+                        <a href="https://www.facebook.com/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.twitter.com/" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com/" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Droits d'auteur et mentions légales -->
+            <div class="row">
+                <div class="col-12 text-center">
+                    © WEEKEND FOOD FOOT 2024. ALL RIGHTS RESERVED.
+                </div>
+            </div>
+        </div>
+    </footer>
+    {% load static %}
+    <script src="{% static 'js/activeLinkHighlighter.js' %}"></script>
+    <!-- Ajout de Bootstrap JS et Popper.js (à la fin du corps du document pour un chargement plus rapide) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
